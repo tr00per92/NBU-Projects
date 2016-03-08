@@ -1,0 +1,21 @@
+{
+  "name": "SchoolsAPI",
+  "version": "0.0.2",
+  "description": "bulgarian schools REST API",
+  "main": "server.js",
+  "engines": {
+    "node": "5.6.x",
+    "npm": "3.7.x"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Tr00peR",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
+    "express": "~4.13.4",
+    "mongoose": "~4.4.4"
+  }
+}
