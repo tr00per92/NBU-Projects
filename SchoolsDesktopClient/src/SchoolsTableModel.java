@@ -10,7 +10,6 @@ public class SchoolsTableModel extends AbstractTableModel {
     public void loadSchools(Iterable<School> schools) {
         this.schools.clear();
         schools.forEach(this.schools::add);
-        this.fireTableStructureChanged();
     }
 
     public int getRowCount() {

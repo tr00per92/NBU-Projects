@@ -24,21 +24,34 @@ public class MainFrame extends JFrame {
         JPanel mainPanel = new JPanel(mainPanelLayout);
         mainPanel.add(townsPanel, TOWNS);
         mainPanel.add(schoolsPanel, SCHOOLS);
+        this.add(mainPanel);
 
         JButton backButton = new JButton("Назад");
         backButton.addActionListener(e -> mainPanelLayout.show(mainPanel, TOWNS));
         schoolsPanel.getButtonsPanel().add(backButton);
 
-        for (String town : dataProvider.getTowns()) {
-            JButton townButton = new JButton(town);
-            townButton.addActionListener(e -> {
-                schoolsPanel.setSelectedTown(e.getActionCommand());
-                mainPanelLayout.show(mainPanel, SCHOOLS);
-            });
+        new SwingWorker<Iterable<String>, Void>() {
+            protected Iterable<String> doInBackground() {
+                return dataProvider.getTowns();
+            }
 
-            townsPanel.add(townButton);
-        }
+            protected void done() {
+                try {
+                    for (String town : this.get()) {
+                        JButton townButton = new JButton(town);
+                        townButton.addActionListener(e -> {
+                            schoolsPanel.setSelectedTown(e.getActionCommand());
+                            mainPanelLayout.show(mainPanel, SCHOOLS);
+                        });
 
-        this.add(mainPanel);
+                        townsPanel.add(townButton);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    townsPanel.updateUI();
+                }
+            }
+        }.execute();
     }
 }

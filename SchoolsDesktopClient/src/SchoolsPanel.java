@@ -1,11 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.concurrent.ExecutionException;
+
 import DataProviders.IDataProvider;
 import Models.School;
 
 public class SchoolsPanel extends JPanel {
     private IDataProvider dataProvider;
     private String selectedTown;
+    private JTable schoolsTable;
     private SchoolsTableModel tableModel = new SchoolsTableModel();
     private JPanel buttonsPanel = new JPanel();
 
@@ -24,7 +27,23 @@ public class SchoolsPanel extends JPanel {
     public void setSelectedTown(String selectedTown) {
         if (!selectedTown.equals(this.selectedTown)) {
             this.selectedTown = selectedTown;
-            this.tableModel.loadSchools(this.dataProvider.getSchools(this.selectedTown));
+            this.schoolsTable.setVisible(false);
+
+            new SwingWorker<Iterable<School>, Void>() {
+                protected Iterable<School> doInBackground() {
+                    return dataProvider.getSchools(selectedTown);
+                }
+
+                protected void done() {
+                    try {
+                        tableModel.loadSchools(this.get());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        schoolsTable.setVisible(true);
+                    }
+                }
+            }.execute();
         }
     }
 
@@ -56,8 +75,8 @@ public class SchoolsPanel extends JPanel {
     }
 
     private void initializeTable() {
-        JTable table = new JTable(this.tableModel);
-        table.getTableHeader().setResizingAllowed(true);
-        this.add(new JScrollPane(table));
+        this.schoolsTable = new JTable(this.tableModel);
+        this.schoolsTable.getTableHeader().setResizingAllowed(true);
+        this.add(new JScrollPane(this.schoolsTable));
     }
 }
