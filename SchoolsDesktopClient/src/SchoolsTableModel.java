@@ -1,7 +1,7 @@
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import java.util.List;
-import Models.School;
+import models.School;
 
 public class SchoolsTableModel extends AbstractTableModel {
     private String[] columns = new String[] { "Име", "Адрес", "Email" };

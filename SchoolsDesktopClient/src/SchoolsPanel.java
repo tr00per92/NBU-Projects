@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.concurrent.ExecutionException;
-
-import DataProviders.IDataProvider;
-import Models.School;
+import dataProviders.IDataProvider;
+import models.School;
 
 public class SchoolsPanel extends JPanel {
     private IDataProvider dataProvider;

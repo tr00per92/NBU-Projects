@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import DataProviders.IDataProvider;
+import dataProviders.IDataProvider;
 
 public class MainFrame extends JFrame {
     private final static String TOWNS = "Towns";
