@@ -63,9 +63,26 @@ public class SchoolsPanel extends JPanel {
         addSchoolBtn.addActionListener(e -> {
             int option = JOptionPane.showConfirmDialog(this, addSchoolPanel, addSchoolTitle, JOptionPane.OK_CANCEL_OPTION);
             if (option == JOptionPane.OK_OPTION) {
-                School school = new School(nameField.getText(), this.selectedTown, addressField.getText(), emailField.getText());
-                this.dataProvider.addSchool(school);
-                this.tableModel.loadSchools(this.dataProvider.getSchools(this.selectedTown));
+                new SwingWorker<Iterable<School>, Void>() {
+                    protected Iterable<School> doInBackground() {
+                        School school = new School(nameField.getText(), selectedTown, addressField.getText(), emailField.getText());
+                        dataProvider.addSchool(school);
+                        return dataProvider.getSchools(selectedTown);
+                    }
+
+                    protected void done() {
+                        try {
+                            tableModel.loadSchools(this.get());
+                            schoolsTable.updateUI();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        } finally {
+                            nameField.setText("");
+                            addressField.setText("");
+                            emailField.setText("");
+                        }
+                    }
+                }.execute();
             }
         });
 
