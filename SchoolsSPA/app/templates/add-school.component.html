@@ -1,0 +1,24 @@
+<div class="col-md-4 col-md-offset-4 add-school">
+    <h3 class="text-center">Ново училище</h3>
+    <form (ngSubmit)="addSchool()" #schoolForm="ngForm">
+        <div class="form-group">
+            <label for="Name">Име *</label>
+            <input type="text" class="form-control" required [(ngModel)]="model.Name" ngControl="Name">
+        </div>
+        <div class="form-group">
+            <label for="Town">Град *</label>
+            <select class="form-control" required [(ngModel)]="model.Town" ngControl="Town">
+                <option *ngFor="#town of towns" [value]="town.Name">{{ town.Name }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Email">Email *</label>
+            <input type="text" class="form-control" required [(ngModel)]="model.Email" ngControl="Email">
+        </div>
+        <div class="form-group">
+            <label for="Address">Адрес *</label>
+            <textarea class="form-control" required [(ngModel)]="model.Address" ngControl="Address"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default" [disabled]="!schoolForm.form.valid">Добави</button>
+    </form>
+</div>

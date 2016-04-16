@@ -1,0 +1,24 @@
+<div class="container">          
+    <div class="header clearfix row">
+        <h1 class="text-muted text-center">{{ title }}</h1>
+        <nav>
+            <ul class="nav nav-pills">
+                <li>
+                    <a [routerLink]="['Schools']">Всички</a>
+                </li>
+                <li *ngFor="#town of towns">
+                    <a [routerLink]="['SchoolsInTown', { town: town.Name }]">{{ town.Name }}</a>
+                </li>
+                <li class="pull-right">
+                    <a [routerLink]="['AddSchool']">Добави училище</a>
+                </li>
+            </ul>
+        </nav>        
+    </div>
+    <div class="row">
+        <router-outlet></router-outlet>        
+    </div>    
+    <footer class="footer row">
+        <p class="text-center">&copy; Tr00peR - 2016</p>
+    </footer>
+</div>

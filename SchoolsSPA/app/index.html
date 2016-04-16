@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bulgarian Schools</title>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Angular 2 Scrips And Dependencies -->
+    <script src="app/lib/angular2-polyfills.js"></script>
+    <script src="app/lib/system.src.js"></script>
+    <script src="app/lib/Rx.js"></script>
+    <script src="app/lib/angular2.dev.js"></script>
+    <script src="app/lib/router.dev.js"></script>
+    <script src="app/lib/http.dev.js"></script>
+
+    <!-- SystemJS Configuration -->
+    <script>
+		System.config({	packages: {	app: { } } });
+		System.import('app/main').then(undefined, console.error.bind(console));
+    </script>
+</head>
+<body>
+    <app>Loading...</app>
+</body>
+</html>
