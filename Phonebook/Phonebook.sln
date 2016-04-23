@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{93C84E04-19F5-4815-8CD2-D728A3557D43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{527A22D8-AC81-47ED-9992-80C366BE208A}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Phonebook", "src\Phonebook\Phonebook.xproj", "{06FD94E6-F009-4FEE-B55D-8521A34CDCA5}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Phonebook.Data", "src\Phonebook.Data\Phonebook.Data.xproj", "{D81E0752-3F8B-4911-B645-B0AA1B60B785}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06FD94E6-F009-4FEE-B55D-8521A34CDCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06FD94E6-F009-4FEE-B55D-8521A34CDCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06FD94E6-F009-4FEE-B55D-8521A34CDCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06FD94E6-F009-4FEE-B55D-8521A34CDCA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81E0752-3F8B-4911-B645-B0AA1B60B785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81E0752-3F8B-4911-B645-B0AA1B60B785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81E0752-3F8B-4911-B645-B0AA1B60B785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81E0752-3F8B-4911-B645-B0AA1B60B785}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06FD94E6-F009-4FEE-B55D-8521A34CDCA5} = {93C84E04-19F5-4815-8CD2-D728A3557D43}
+		{D81E0752-3F8B-4911-B645-B0AA1B60B785} = {93C84E04-19F5-4815-8CD2-D728A3557D43}
+	EndGlobalSection
+EndGlobal

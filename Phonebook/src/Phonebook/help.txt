@@ -1,0 +1,10 @@
+Available commands:
+  LOGIN {username}
+  LOGOUT
+  REGISTER {username}
+  INSERT {name} {number}
+  DELETE {name}
+  LIST
+  FIND {search-text}
+  HELP
+  EXIT

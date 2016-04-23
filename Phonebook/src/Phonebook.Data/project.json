@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0-*",
+  "description": "Phonebook.Data Class Library",
+  "authors": [ "Tr00peR" ],
+  "dependencies": {
+    "CryptoHelper": "1.0.0-rc1-final",
+    "EntityFramework.Sqlite": "7.0.0-rc1-final"
+  },
+  "frameworks": {
+    "net452": {
+      "frameworkAssemblies": {
+        "System.Runtime": ""
+      }
+    },
+    "net461": {
+      "frameworkAssemblies": {
+        "System.Runtime": ""
+      }
+    },
+    "dotnet5.4": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  }
+}
