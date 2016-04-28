@@ -1,0 +1,209 @@
+header, section, div, body, footer, h1, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    border: 3px solid #B66D31;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background: #F79646;
+    max-width: 911px;
+    min-height: 662px;
+    margin: 0 auto;
+}
+
+header {
+    background: #FAC090;
+    text-align: center;
+    border-bottom: 3px solid #B66D31;
+    padding: 10px;
+}
+
+header a {
+    float: right;
+    text-decoration: none;
+    color: #3B6291;
+    border-bottom: 2px dotted #3B6291;
+    margin-right: 10px;
+    font-size: 1.45rem;
+}
+
+main {
+    min-height: 542px;
+}
+
+footer {
+    color: white;
+    background: #E46C0A;
+    text-align: center;
+    border-top: 3px solid #B66D31;
+    padding: 14px;
+    font-size: 1.3rem;
+    margin-top: 15px;
+}
+
+#status-container {
+    color: white;
+    background: #88A945;
+    border-radius: 5px;
+    border: 3px solid #5C732F;
+    margin: 20px 50px 0;
+    width: 770px;
+    text-align: center;
+    padding: 0 15px;
+    display: none;
+    position: absolute;
+}
+
+#status-close {
+    float: right;
+    display: inline-block;
+    border-left: 3px solid #5C732F;
+    color: #5C732F;
+    font-weight: bolder;
+    padding: 15px 5px 15px 20px;
+    cursor: pointer;
+}
+
+#status-message {
+    display: inline-block;
+    padding: 11px;
+    font-size: 1.35rem;
+}
+
+form {
+    max-width: 365px;
+    height: 345px;
+    background: #FAC090;
+    border: 3px solid #B66D31;
+    border-radius: 16px;
+    padding: 15px 35px;
+    display: inline-block;
+    /*position: relative;*/
+    /*top: 140px;*/
+    /*left: 230px;*/
+    margin: 140px 0 0 270px;
+    box-shadow: 2px 2px 5px #B66D31;
+}
+
+form > input, form > label {
+    display: block;
+    font-size: 1.4rem;
+}
+
+form > input {
+    padding: 10px 5px;
+    border: 3px solid #F79646;
+    width: 96%;
+}
+
+form > label {
+    margin: 15px 0 10px;
+}
+
+form > h1 {
+    font-size: 2rem;
+    border-bottom: 3px solid #B66D31;
+    padding: 7px;
+    text-align: center;
+}
+
+form > button {
+    border: 3px solid #B66D31;
+    border-radius: 10px;
+    padding: 10px 33px;
+    width: 155px;
+    margin-top: 20px;
+    color: white;
+    font-size: 1.35rem;
+    background: #F79646;
+    cursor: pointer;
+}
+
+form > a {
+    color: #446692;
+    font-size: 1.35rem;
+    text-decoration: none;
+    border-bottom: 2px dotted #446692;
+    float: right;
+    margin: 30px 10px 0 0;
+}
+
+#register-header, #register-btn, #login-link {
+    display: none;
+}
+
+#notes-container {
+    display: none;
+    margin-top: 75px;
+    padding-left: 22px;
+}
+
+#notes-container > section {
+    background: #FAC090;
+    border: 3px solid #B66D31;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #B66D31;
+    width: 43%;
+    float: left;
+    margin: 20px 10px 0 0;
+    padding: 20px;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    font-size: 1.35rem;
+}
+
+.delete-btn {
+    float: right;
+    color: #C0504D;
+    border: 3px solid #C0504D;
+    border-radius: 5px;
+    background: #F18E6A;
+    padding: 3px;
+    cursor: pointer;
+}
+
+#add-note > h4 {
+    text-align: center;
+    border-bottom: 3px solid #B66D31;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+#add-note > button {
+    cursor: pointer;
+    height: 93px;
+    width: 74px;
+    float: right;
+    border: 3px solid #B66D31;
+    border-radius: 10px;
+    color: white;
+    background: #F79646;
+    font-size: 1.3rem;
+}
+
+#add-note > input {
+    border: 3px solid #F79646;
+    width: 213px;
+    padding: 6px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+#add-note > label {
+    font-size: 1.25rem;
+    display: inline-block;
+    width: 46px;
+}
+
+@media screen and (max-width: 850px) {
+    #notes-container > section {
+        width: 90%;
+    }
+
+    form {
+        margin-left: 0;
+    }
+}
