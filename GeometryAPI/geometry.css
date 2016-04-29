@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+}
+
+canvas, form {
+    width: 550px;
+    height: 415px;
+    border: 1px solid black;
+    margin: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    padding: 10px;
+}
+
+input, select, button {
+    margin: 0 10px 10px 0;
+}
+
+#shapesInfo {
+    border: 1px solid black;
+    width: 520px;
+    height: 235px;
+    padding: 10px;
+    overflow-y: auto;
+}

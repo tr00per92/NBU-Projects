@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Geometry API</title>
+    <link href="geometry.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Canvas Geometry API</h1>
+    </header>
+    <form>
+        <label for="x">X: </label>
+        <input type="number" min="0" max="550" id="x" value="0" />
+        <label for="y">Y: </label>
+        <input type="number" min="0" max="400" id="y" value="0" />
+        <label for="color">Color: </label>
+        <input type="color" id="color" value="#FF0000"/>
+        <br>
+        <label for="shapeSelector">Type: </label>
+        <select id="shapeSelector">
+            <option value="circle" selected>Circle</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="triangle">Triangle</option>
+            <option value="segment">Segment</option>
+            <option value="point">Point</option>
+        </select>
+        <div id="shapeAttributes">
+            <label for="r">Radius: </label>
+            <input type="number" min="0" max="400" id="r"/>
+        </div>
+        <button type="button" id="addButton">ADD</button>
+        <button type="button" id="clearButton">CLEAR</button>
+        <button type="button" id="saveButton">SAVE STATE</button>
+        <button type="button" id="restoreButton">RESTORE STATE</button>
+        <a href="#" id="exportButton" download="geometry.png"><button type="button">EXPORT</button></a>
+        <div id="shapesInfo"></div>
+    </form>
+    <canvas id="myCanvas" width="550" height="400"></canvas>
+    <script src="shapes.js"></script>
+    <script src="canvasState.js"></script>
+    <script src="geometry.js"></script>
+</body>
+</html>
