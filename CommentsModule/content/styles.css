@@ -1,0 +1,32 @@
+.no-padding-left {
+    padding-left: 0;
+    margin-bottom: 9px;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+#register-form {
+    display: none;
+}
+
+#logout {
+    color: white;
+}
+
+.alert {
+    padding: 3px 35px 3px 0;
+}
+
+.panel-body {
+    padding: 9px 15px;
+}
+
+.btn {
+    width: 120px;
+}
