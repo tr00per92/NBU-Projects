@@ -1,0 +1,13 @@
+﻿@model PhotoModel
+
+<h3>@Model.Title</h3>
+
+@if (Model.UserId == User.GetId())
+{
+    <form asp-action="Delete" id="delete-form">
+        <input type="hidden" value="@Model.Id" name="id" />
+        <p><a href="#" onclick="if (confirm('Are you sure?')) { $('#delete-form').submit(); }">[delete]</a></p>
+    </form>
+}
+
+<img src="@Url.Action("RawPhoto", new { photoPath = Model.Url })" alt="@Model.Title" />

@@ -1,0 +1,35 @@
+﻿<form asp-action="Upload" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <label class="btn btn-default" for="my-file-selector">
+        <input id="my-file-selector"
+               type="file"
+               style="display:none;"
+               name="photo"
+               onchange="$('#upload-file-info').text($(this).val());"
+               data-val="true"
+               required
+               data-val-required="The file is required.">
+        Select File
+    </label>
+    <span class="label label-info" id="upload-file-info"></span>
+    <br />
+    <br />
+    <input type="text" 
+           name="title" 
+           class="form-control" 
+           required 
+           placeholder="Title..." 
+           data-val="true" 
+           data-val-required="The title is required." />
+    <br/>
+    <input type="submit" value="Upload" class="btn btn-primary"/>
+</form>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $.validator.setDefaults({ ignore: [] });
+        });
+    </script>
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

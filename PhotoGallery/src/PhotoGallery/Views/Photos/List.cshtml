@@ -1,0 +1,15 @@
+﻿@model IEnumerable<PhotoModel>
+
+@foreach (var photoModel in Model)
+{
+    <div style="margin-top: 20px;">
+        <a href="@Url.Action("Photo", new { id = photoModel.Id })">
+            <img src="@Url.Action("RawPhoto", new { photoPath = photoModel.Url })"
+                 alt="@photoModel.Title"
+                 class="img-thumbnail"
+                 width="100"
+                 style="vertical-align: middle;"/>
+            <span style="font-size: 20px;">@photoModel.Title</span>
+        </a>
+    </div>
+}
